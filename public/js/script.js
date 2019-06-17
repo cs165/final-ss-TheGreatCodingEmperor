@@ -5,14 +5,23 @@
 (() => {
     async function onSubmit(event) {
       event.preventDefault();
+        
+      const tomorrow = document.createElement('button');
+        tomorrow.classList.add('tomorrow');
+        const yesterday = document.createElement('button');
+        yesterday.classList.add('yesterday');
+
+
+
+
       const resultsDiv = document.querySelector('#results');
-      resultsDiv.innerHTML = '';
+      resultsDiv.value = '';
   
       const info = getParameters();
   
       const response = await fetch(info.path, info.options);
       const json = await response.json();
-      resultsDiv.textContent = JSON.stringify(json, null, 2);
+      resultsDiv.value = JSON.stringify(json, null, 2);
   
       const resultsContainer = document.querySelector('#results-container');
       resultsContainer.classList.remove('hidden');
@@ -50,10 +59,10 @@
     }
   
     function getParameters() {
-      const path = pathInput.value.trim();
+      const path = "/api/"+dateID;//path
   
       const index = methodInput.selectedIndex;
-      const method = methodInput.options[index].value;
+      const method = methodInput.options[index].value;//
       const options = {
         method: method
       };
@@ -87,10 +96,18 @@
       previewArea.innerHTML = `fetch('${info.path}', ${optionsPretty});`
     }
   
-    const pathInput = document.querySelector('#path-input');
-    pathInput.addEventListener('keyup', createRequestPreview);
+    const today =new Date();
+    let dateID = new Date();
+    dateID.setDate(today.getDate());
+    const options = { month: 'long', day: 'numeric' };
+    console.log(dateID.toLocaleDateString('en-US', options));
+    dateID = dateID.toLocaleDateString('en-US', options);
+
+
+    const pathInput = document.querySelector('#path-input');//path
+    pathInput.addEventListener('keyup', createRequestPreview);//path change
     const methodInput = document.querySelector('#method-input');
-    methodInput.addEventListener('change', createRequestPreview);
+    methodInput.addEventListener('change', createRequestPreview);//method
   
     const addButton = document.querySelector('#add-button');
     addButton.addEventListener('click', (event) => {

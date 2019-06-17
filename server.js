@@ -23,8 +23,10 @@ async function onGet(req, res) {
   const rows = result.rows;
   console.log(rows);
   let data = [];
+  let exist = false;
   for (i = 1; i < rows.length; i++) {
-    if (id == rows[i][0]) {
+    if (id === rows[i][0]) {
+      exist = true;
       let tmp = {};
       const n = rows[0].length;
       let key_name = [];
@@ -35,9 +37,15 @@ async function onGet(req, res) {
       data.push(tmp);
     }
   }
+  let add =[];
+  add.push(id);
+  add.push(null);
 
   // TODO(you): Finish onGet.
-
+  if(exist!==true){
+    console.log("success");
+    await sheet.appendRow(add);
+  }
   res.json(data);
 }
 app.get('/api/:id', onGet);
