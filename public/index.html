@@ -5,40 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>CS193x Final Project</title>
     <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/app.js" defer></script>
     <script src="js/script.js" defer></script>
     </script>
   </head>
   <body>
-      <section>
-          <h1>Spreadsheet test UI</h1>
+      <section class="main">
+          <h1>Diary</h1>
           <fieldset>
             <form>
               <p>
-                API Path: <input type="text" id="path-input" value="/api" />
+                <pre id="preview-area" class="hide" contenteditable readonly></pre>
               </p>
               <p>
-                Method:
-                <select id="method-input">
-                  <option>GET</option>
-                  <option>DELETE</option>
-                  <option>POST</option>
-                  <option>PATCH</option>
-                </select>
-              </p>
-              <p>
-                Body data: <button id="add-button">Add</button>
-                <div id="key-values"></div>
-              </p>
-              <p>
-                Request preview:<br/>
-                <pre id="preview-area" contenteditable readonly></pre>
-              </p>
-              <p>
-                <input type="submit" id="fetch-button" value="Fetch!"/>
+                <input type="submit" id="fetch-button" value="Create Diary!"/>
               </p>
             </form>
           </fieldset>
-          <section id="results-container" class="hidden">
+          <section id="results-container" class="hide">
             <hr/>
             <h2>Fetch results:</h2>
             <textarea id="results"></textarea>
