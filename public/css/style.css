@@ -1,7 +1,15 @@
-<<<<<<< HEAD
-/**
- * TODO(you): Add the CSS necessary to complete your final project.
- **/
+body,html{
+    background-color:#fdf5f5;
+    display:block;
+    height: 100%;
+}
+.main{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 .hide{
     display:none !important;
 }
@@ -15,26 +23,29 @@
     width:100%;
 }
 .text{
-    width:600px;
+    width:70%;
     height:500px;
-=======
-/**
- * TODO(you): Add the CSS necessary to complete your final project.
- **/
-.hide{
-    display:none !important;
+    opacity: 50%;
+    background-color:white;
 }
-#input{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.title{
+    font-family: 'Merriweather', Georgia, serif;
+    font-size:40px;
+    border-bottom-style:solid;
+    border-color:grey;
+    text-align: center;
+    width:160px;
 }
-#content{
-    height:100%;
+h1{
+    font-family: 'Merriweather', Georgia, serif;
+    font-size:30pt;
+}
+#fetch-button{
+    font-family: 'Merriweather', Georgia, serif;
+    font-size:14pt;
+}
+.buttonContainer{
     width:100%;
-}
-.text{
-    width:600px;
-    height:500px;
->>>>>>> 3baf76fd1c84acdc764b1d64c68043d23dc8b1d3
+    display:flex;
+    justify-content: space-between;
 }
