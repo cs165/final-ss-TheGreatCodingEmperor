@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * TODO(you): Add the CSS necessary to complete your final project.
  **/
@@ -16,4 +17,24 @@
 .text{
     width:600px;
     height:500px;
+=======
+/**
+ * TODO(you): Add the CSS necessary to complete your final project.
+ **/
+.hide{
+    display:none !important;
+}
+#input{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#content{
+    height:100%;
+    width:100%;
+}
+.text{
+    width:600px;
+    height:500px;
+>>>>>>> 3baf76fd1c84acdc764b1d64c68043d23dc8b1d3
 }
